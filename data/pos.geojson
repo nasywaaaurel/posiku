@@ -1,0 +1,372 @@
+{
+    "type": "FeatureCollection",
+    "name": "pos",
+    "crs": {
+        "type": "name",
+        "properties": {
+            "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+        }
+    },
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "NAMOBJ": "Kantor Pos Sadang",
+                "FCODE": null,
+                "JNKPOS": 999,
+                "REMARK": "Kantor Pos Lainnya",
+                "SRS_ID": null,
+                "LCODE": "HC0080",
+                "METADATA": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    109.672566613000072,
+                    -7.549099819999981,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "NAMOBJ": "Kantor Pos Alian",
+                "FCODE": null,
+                "JNKPOS": 999,
+                "REMARK": "Kantor Pos Lainnya",
+                "SRS_ID": null,
+                "LCODE": "HC0080",
+                "METADATA": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    109.698904208000044,
+                    -7.614031631999978,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "NAMOBJ": "Kantor Pos Karanggayam",
+                "FCODE": null,
+                "JNKPOS": 999,
+                "REMARK": "Kantor Pos Lainnya",
+                "SRS_ID": null,
+                "LCODE": "HC0080",
+                "METADATA": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    109.580364700000075,
+                    -7.587690995999935,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "NAMOBJ": "Kantor Pos Gombong",
+                "FCODE": null,
+                "JNKPOS": 999,
+                "REMARK": "Kantor Pos Lainnya",
+                "SRS_ID": null,
+                "LCODE": "HC0080",
+                "METADATA": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    109.513167415000055,
+                    -7.603671845999941,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "NAMOBJ": "Kantor Pos Kutowinangun",
+                "FCODE": null,
+                "JNKPOS": 999,
+                "REMARK": "Kantor Pos Lainnya",
+                "SRS_ID": null,
+                "LCODE": "HC0080",
+                "METADATA": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    109.733738254000059,
+                    -7.721127455999977,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "NAMOBJ": "Kantor Pos Kebumen",
+                "FCODE": null,
+                "JNKPOS": 999,
+                "REMARK": "Kantor Pos Lainnya",
+                "SRS_ID": null,
+                "LCODE": "HC0080",
+                "METADATA": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    109.651845951000041,
+                    -7.670289964999938,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "NAMOBJ": "Kantor Pos Klirong",
+                "FCODE": null,
+                "JNKPOS": 999,
+                "REMARK": "Kantor Pos Lainnya",
+                "SRS_ID": null,
+                "LCODE": "HC0080",
+                "METADATA": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    109.628391556000054,
+                    -7.738009455999929,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "NAMOBJ": "Kantor Pos Pejagoan",
+                "FCODE": null,
+                "JNKPOS": 999,
+                "REMARK": "Kantor Pos Lainnya",
+                "SRS_ID": null,
+                "LCODE": "HC0080",
+                "METADATA": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    109.638136603000078,
+                    -7.678603167999938,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "NAMOBJ": "Kantor Pos Puring",
+                "FCODE": null,
+                "JNKPOS": 999,
+                "REMARK": "Kantor Pos Lainnya",
+                "SRS_ID": null,
+                "LCODE": "HC0080",
+                "METADATA": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    109.523203340000066,
+                    -7.73721451199998,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "NAMOBJ": "Kantor Pos Karanganyar",
+                "FCODE": null,
+                "JNKPOS": 999,
+                "REMARK": "Kantor Pos Lainnya",
+                "SRS_ID": null,
+                "LCODE": "HC0080",
+                "METADATA": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    109.577630832000068,
+                    -7.633161722999944,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "NAMOBJ": "Kantor Pos Sruweng",
+                "FCODE": null,
+                "JNKPOS": 999,
+                "REMARK": "Kantor Pos Lainnya",
+                "SRS_ID": null,
+                "LCODE": "HC0080",
+                "METADATA": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    109.607150640000043,
+                    -7.661682245999941,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "NAMOBJ": "Kantor Pos Adimulyo",
+                "FCODE": null,
+                "JNKPOS": 999,
+                "REMARK": "Kantor Pos Lainnya",
+                "SRS_ID": null,
+                "LCODE": "HC0080",
+                "METADATA": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    109.555073523000033,
+                    -7.668692733999933,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "NAMOBJ": "Kantor Pos Kuwarasan",
+                "FCODE": null,
+                "JNKPOS": 999,
+                "REMARK": "Kantor Pos Lainnya",
+                "SRS_ID": null,
+                "LCODE": "HC0080",
+                "METADATA": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    109.508000485000082,
+                    -7.663170659999935,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "NAMOBJ": "Kantor Pos Buluspesantren",
+                "FCODE": null,
+                "JNKPOS": 999,
+                "REMARK": "Kantor Pos Lainnya",
+                "SRS_ID": null,
+                "LCODE": "HC0080",
+                "METADATA": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    109.668361484000059,
+                    -7.771166095999945,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "NAMOBJ": "Kantor Pos Ambal",
+                "FCODE": null,
+                "JNKPOS": 999,
+                "REMARK": "Kantor Pos Lainnya",
+                "SRS_ID": null,
+                "LCODE": "HC0080",
+                "METADATA": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    109.724794465000059,
+                    -7.787045701999944,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "NAMOBJ": "Kantor Pos Rowokele",
+                "FCODE": null,
+                "JNKPOS": 999,
+                "REMARK": "Kantor Pos Lainnya",
+                "SRS_ID": null,
+                "LCODE": "HC0080",
+                "METADATA": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    109.445857881000052,
+                    -7.598768503999963,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "NAMOBJ": "Kantor Pos Buayan",
+                "FCODE": null,
+                "JNKPOS": 999,
+                "REMARK": "Kantor Pos Lainnya",
+                "SRS_ID": null,
+                "LCODE": "HC0080",
+                "METADATA": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    109.490538774000072,
+                    -7.680455586999926,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "NAMOBJ": "Kantor Pos Prembun",
+                "FCODE": null,
+                "JNKPOS": 999,
+                "REMARK": "Kantor Pos Lainnya",
+                "SRS_ID": null,
+                "LCODE": "HC0080",
+                "METADATA": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    109.79721634200007,
+                    -7.72313924599996,
+                    0.0
+                ]
+            }
+        }
+    ]
+}

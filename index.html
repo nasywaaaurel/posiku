@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <!-- Add a modern font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        nav ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            /* Add spacing between buttons */
+        }
+
+        nav ul li a {
+            font-size: 14px;
+            /* Reduced font size */
+            padding: 5px 10px;
+            /* Reduced padding */
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s ease, border-bottom 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #FF6F91;
+            border-bottom: 2px solid #FF6F91;
+        }
+
+        header.site-header {
+            background-color: #FFB3C6;
+            padding: 8px;
+            /* Reduced padding to make the header smaller */
+            text-align: center;
+            box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .figure img:hover {
+            transform: scale(1.05);
+            /* Membesar gambar saat di-hover */
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+            /* Menambahkan bayangan lebih kuat saat hover */
+        }
+
+        .figure-caption {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .figure-caption:hover {
+            color: #ff328b;
+            /* Warna caption berubah saat gambar dihover */
+        }
+
+        .accordion-button {
+            background-color: #FFB3C6;
+            color: #333;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .accordion-button:hover {
+            background-color: #FF6F91;
+            color: white;
+        }
+
+        .accordion-button:not(.collapsed) {
+            background-color: #FF6F91;
+            color: white;
+        }
+
+        .accordion-item {
+            margin-bottom: 10px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+
+        .accordion-body {
+            font-size: 14px;
+            color: #555;
+        }
+
+        ol {
+            padding-left: 20px;
+        }
+
+        ol li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Navigation -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="peta.html">Peta</a></li>
+            <li><a href="database.php">Data</a></li>
+            <li><a href="profile.html">Profile</a></li>
+        </ul>
+    </nav>
+
+    <!-- Google Fonts Import -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <!-- CSS Styling -->
+    <style>
+        /* Font Styling */
+        nav ul {
+            list-style: none;
+            /* Hilangkan bullet */
+            display: flex;
+            /* Menu horizontal */
+            justify-content: center;
+            /* Teks di tengah */
+            gap: 1rem;
+            /* Jarak antar item */
+            padding: 0;
+            margin: 0;
+            font-family: 'Poppins';
+            /* Gunakan font Poppins */
+            font-size: 2rem;
+            /* Ukuran font kecil */
+            font-weight: 300;
+            /* Gunakan berat medium */
+        }
+
+        /* Link Styling */
+        nav ul li a {
+            text-decoration: none;
+            /* Hilangkan garis bawah */
+            color: #000000;
+            /* Warna teks abu-abu gelap */
+            transition: color 0.3s ease;
+            /* Animasi saat hover */
+        }
+
+        nav ul li a:hover {
+            color: #007bff;
+            /* Warna biru saat hover */
+        }
+    </style>
+
+    <main>
+        <!-- Section Hero -->
+        <!-- Section Hero -->
+        <section class="hero">
+            <div class="hero-content">
+                <img src="icon/pos.png" alt="Logo Kantor Pos" class="hero-logo" style="width: 80px; height: auto; margin-right: 20px;">
+                <div>
+                    <h2>POSIKU</h2>
+                    <h4>Posisi Kantor Pos Kebumen</h4>
+                    <p>Temukan lokasi kantor pos terdekat dan informasi layanan yang tersedia dengan mudah melalui
+                        WebGIS Persebaran Kantor Pos Kabupaten Kebumen</p>
+                </div>
+            </div>
+        </section>        
+
+
+        <!-- Google Fonts Import -->
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+        <!-- CSS Styling -->
+        <style>
+            /* Hero Section Styling */
+            .hero {
+                background-color: #ea7c98;
+                /* Latar belakang cerah */
+                text-align: center;
+                /* Konten di tengah */
+                padding: 2rem 1rem;
+                /* Spasi atas, bawah, kiri, kanan */
+                box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+                /* Efek bayangan dalam */
+            }
+
+            /* H2 Styling */
+            .hero h2 {
+                font-family: 'Poppins', sans-serif;
+                /* Gunakan font Poppins */
+                font-size: 2rem;
+                /* Ukuran besar untuk judul utama */
+                font-weight: 800;
+                /* Berat font tebal */
+                color: #300406;
+                /* Warna merah */
+                margin-bottom: 0.5rem;
+                /* Jarak bawah */
+                text-transform: uppercase;
+                /* Semua huruf kapital */
+                letter-spacing: 1px;
+                /* Jarak antar huruf */
+            }
+
+            /* H4 Styling */
+            .hero h4 {
+                font-family: 'Poppins', sans-serif;
+                /* Font Poppins */
+                font-size: 1.5rem;
+                /* Ukuran sedang */
+                font-weight: 400;
+                /* Berat font ringan */
+                color: #640c2b;
+                /* Warna teks abu gelap */
+                margin-bottom: 1rem;
+                /* Jarak bawah */
+                text-transform: capitalize;
+                /* Huruf awal kata kapital */
+            }
+
+            /* Paragraph Styling */
+            .hero p {
+                font-family: 'Poppins', sans-serif;
+                /* Font Poppins */
+                font-size: 0.9rem;
+                /* Ukuran font normal */
+                font-weight: 300;
+                /* Berat font sangat ringan */
+                color: #ffffff;
+                /* Warna teks abu-abu sedang */
+                line-height: 1.3;
+                /* Jarak antar baris */
+                max-width: 600px;
+                /* Batas lebar teks */
+                margin: 0 auto;
+                /* Teks rata tengah */
+            }
+        </style>
+
+        <!-- Deskripsi Card -->
+        <div class="card mt-3">
+            <div class="card-header alert alert-danger">
+                <h4 id="deskripsi">DESKRIPSI</h4>
+            </div>
+            <div class="card-body">
+                <p>Kantor Pos Kabupaten Kebumen menyediakan layanan pengiriman surat, paket, dan dokumen dengan jaringan
+                    yang luas serta efisien. Terletak di berbagai lokasi strategis di seluruh wilayah Kebumen, kantor
+                    pos ini mendukung kebutuhan masyarakat dalam pengiriman barang domestik dan internasional.</p>
+                <p>Selain itu, kantor pos juga menyediakan layanan tambahan seperti pembayaran tagihan, transfer uang,
+                    dan layanan filateli. Temukan lokasi kantor pos terdekat melalui website peta interaktif ini untuk
+                    mempermudah akses Anda.</p>
+            </div>
+        </div>
+
+        <!-- Google Fonts Import -->
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+        <!-- CSS Styling -->
+        <style>
+            /* Font Styling for Card */
+            .card {
+                font-family: 'Roboto', sans-serif;
+                /* Font modern */
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                /* Tambahkan bayangan */
+                border: 1px solid #ddd;
+                /* Tambahkan border halus */
+                border-radius: 8px;
+                /* Pojok melengkung */
+            }
+
+            .card-header {
+                font-weight: 500;
+                /* Gunakan berat font sedang */
+                font-size: 1rem;
+                /* Ukuran font untuk judul */
+                text-align: center;
+                /* Pusatkan teks */
+                background-color: #f8d7da;
+                /* Warna merah muda lembut */
+                color: #721c24;
+                /* Warna teks merah tua */
+                padding: 1rem;
+                /* Ruang di sekitar teks */
+            }
+
+            .card-body p {
+                font-size: 0.8rem;
+                /* Ukuran teks paragraf */
+                font-weight: 300;
+                /* Berat font ringan */
+                color: #333333;
+                /* Warna teks abu gelap */
+                line-height: 1.8;
+                /* Jarak antar baris */
+                text-align: justify;
+                /* Rata kanan-kiri */
+                margin-bottom: 0.7rem;
+                /* Jarak antar paragraf */
+            }
+        </style>
+
+        <div class="card mt-3">
+            <div class="card-header alert alert-danger">
+                <h4 id="deskripsi">Kantor Pos Terbesar di Kabupaten Kebumen</h4>
+            </div>
+
+            <div class="row justify-content-center">
+                <!-- Gambar pertama, kedua, dan ketiga dalam satu baris -->
+                <div class="col-12 d-flex justify-content-center mb-4">
+                    <figure class="figure mx-3">
+                        <a href="https://www.google.com/maps?q=Kantor+Pos+Kebumen" target="_blank">
+                            <img src="icon/kebumen.jpg" class="img-fluid" alt="Kantor Pos Kebumen"
+                                style="height: 150px; width: auto; object-fit: cover; border-radius: 8px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); transition: transform 0.3s ease;">
+                        </a>
+                        <figcaption class="figure-caption text-center"
+                            style="font-family: 'Fredoka One', sans-serif; font-weight: 500; color: #780d0d; font-size: 1rem; margin-top: 10px; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);">
+                            Kantor Pos Kebumen
+                        </figcaption>
+                    </figure>
+                    <figure class="figure mx-3">
+                        <a href="https://www.google.com/maps?q=Kantor+Pos+Gombong" target="_blank">
+                            <img src="icon/gombong.png" class="img-fluid" alt="Kantor Pos Gombong"
+                                style="height: 150px; width: auto; object-fit: cover; border-radius: 8px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); transition: transform 0.3s ease;">
+                        </a>
+                        <figcaption class="figure-caption text-center"
+                            style="font-family: 'Fredoka One', sans-serif; font-weight: 500; color: #780d0d; font-size: 1rem; margin-top: 10px; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);">
+                            Kantor Pos Gombong
+                        </figcaption>
+                    </figure>
+                    <figure class="figure mx-3">
+                        <a href="https://www.google.com/maps?q=Kantor+Pos+Kutowinangun" target="_blank">
+                            <img src="icon/kutowinangun.png" class="img-fluid" alt="Kantor Pos Kutowinangun"
+                                style="height: 150px; width: auto; object-fit: cover; border-radius: 8px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); transition: transform 0.3s ease;">
+                        </a>
+                        <figcaption class="figure-caption text-center"
+                            style="font-family: 'Fredoka One', sans-serif; font-weight: 500; color: #780d0d; font-size: 1rem; margin-top: 10px; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);">
+                            Kantor Pos Kutowinangun
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <!-- Google Fonts Import -->
+            <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+
+        </div>
+
+        <!-- Menambahkan Panduan Pengguna -->
+        <div class="card mt-3">
+            <div class="card-header alert alert-warning">
+                <h4 id="panduan" class="fs-5 text-center">PANDUAN PENGGUNA</h4>
+            </div>
+            <div class="card-body">
+                <div class="accordion" id="panduanAccordion">
+                    <!-- Panduan Mengirim Barang -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Cara Mengirim Barang
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                            data-bs-parent="#panduanAccordion">
+                            <div class="accordion-body">
+                                <ol class="list-unstyled fs-6">
+                                    <li>Persiapkan barang yang akan dikirim, pastikan barang tersebut terbungkus dengan
+                                        rapi.</li>
+                                    <li>Isi formulir pengiriman dengan data yang benar, termasuk alamat tujuan.</li>
+                                    <li>Pilih jenis layanan pengiriman yang diinginkan, seperti pengiriman reguler,
+                                        kilat, atau internasional.</li>
+                                    <li>Bayar biaya pengiriman sesuai dengan berat dan tujuan pengiriman.</li>
+                                    <li>Terima bukti pengiriman dan nomor resi untuk melacak status pengiriman.</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Panduan Melacak Kiriman -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Cara Melacak Kiriman
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                            data-bs-parent="#panduanAccordion">
+                            <div class="accordion-body">
+                                <ol class="list-unstyled fs-6">
+                                    <li>Kunjungi website resmi kantor pos atau aplikasi mobile mereka.</li>
+                                    <li>Masukkan nomor resi yang telah diberikan pada saat pengiriman.</li>
+                                    <li>Tekan tombol "Cari" atau "Lacak", dan status kiriman akan muncul.</li>
+                                    <li>Jika kiriman sudah sampai di lokasi tujuan, Anda dapat mengambilnya di kantor
+                                        pos terdekat.</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="card mt-3">
+            <div class="card-header alert alert-warning">
+                <h4 id="faq" class="fs-5 text-center">FAQ (Frequently Asked Questions)</h4>
+            </div>
+            <div class="card-body">
+                <div class="accordion" id="faqAccordion">
+                    <!-- Question 1 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="faqOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseFaqOne" aria-expanded="true" aria-controls="collapseFaqOne">
+                                Apa syarat untuk mengirim barang internasional melalui kantor pos?
+                            </button>
+                        </h2>
+                        <div id="collapseFaqOne" class="accordion-collapse collapse show" aria-labelledby="faqOne"
+                            data-bs-parent="#faqAccordion">
+                            <div class="accordion-body fs-6">
+                                Untuk mengirim barang internasional, Anda harus memastikan bahwa barang tersebut tidak
+                                dilarang oleh regulasi negara tujuan. Anda juga perlu mengisi formulir pengiriman
+                                internasional dan memberikan dokumen terkait seperti faktur atau bukti pengiriman.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Question 2 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="faqTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseFaqTwo" aria-expanded="false" aria-controls="collapseFaqTwo">
+                                Bagaimana cara mengajukan komplain terkait layanan kantor pos?
+                            </button>
+                        </h2>
+                        <div id="collapseFaqTwo" class="accordion-collapse collapse" aria-labelledby="faqTwo"
+                            data-bs-parent="#faqAccordion">
+                            <div class="accordion-body fs-6">
+                                Anda dapat mengajukan komplain melalui website resmi kantor pos, menghubungi layanan
+                                pelanggan, atau langsung datang ke kantor pos terdekat untuk menyampaikan keluhan Anda.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Question 3 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="faqThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseFaqThree" aria-expanded="false"
+                                aria-controls="collapseFaqThree">
+                                Apakah kantor pos menyediakan layanan pengiriman dengan asuransi?
+                            </button>
+                        </h2>
+                        <div id="collapseFaqThree" class="accordion-collapse collapse" aria-labelledby="faqThree"
+                            data-bs-parent="#faqAccordion">
+                            <div class="accordion-body fs-6">
+                                Ya, kantor pos menyediakan layanan pengiriman dengan opsi asuransi untuk barang yang
+                                memiliki nilai tinggi. Anda bisa memilih layanan ini saat mengirim barang.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tambahan CSS untuk tampilan -->
+        <style>
+            .card-header h4 {
+                font-size: 1.25rem;
+                text-align: center;
+            }
+
+            .accordion-button {
+                font-size: 0.9rem;
+            }
+
+            .accordion-body {
+                font-size: 0.875rem;
+            }
+
+            .list-unstyled li {
+                margin-bottom: 0.5rem;
+            }
+        </style>
+
+    </main>
+
+    <footer class="text-center py-2 mt-4">
+        <p style="font-size: 0.75rem; font-weight: 300; margin: 0;">&copy; 2024 Nasywa Aurelia Yuandra. All rights
+            reserved.</p>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

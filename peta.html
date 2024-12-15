@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Persebaran Kantor Pos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <link rel="stylesheet" href="plugin/leaflet-search-master/leaflet-search-master/dist/leaflet-search.min.css">
+    <link rel="stylesheet"
+        href="plugin/Leaflet.defaultextent-master/Leaflet.defaultextent-master/dist/leaflet.defaultextent.css">
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+        }
+
+        #map {
+            width: 100%;
+            height: calc(100vh - 56px);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg" style="background-color: #660909;">
+        <div class="container-fluid">
+            <a class="navbar-brand text-center mx-auto py-2" href="#" style="color: #ffffff; font-size: 1.2rem;">
+                <i class="fa-solid fa-map-location-dot"></i> Persebaran Kantor Pos di Kabupaten Kebumen
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link text-light px-3" href="https://drive.google.com/file/d/12K-y12AHeeWoBFL1eDZFFlRC_gLMu0WP/view" target="_blank" style="font-size: 0.9rem;">
+                            <i class="fa-solid fa-layer-group"></i> Sumber Data
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+        </div>
+    </nav>
+    
+
+    <div id="map"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="plugin/leaflet-search-master/leaflet-search-master/dist/leaflet-search.min.js"></script>
+    <script
+        src="plugin/Leaflet.defaultextent-master/Leaflet.defaultextent-master/dist/leaflet.defaultextent.js"></script>
+    <script>
+        
+        // Inisialisasi peta
+        var map = L.map("map").setView([-7.6782, 109.6511], 10);
+
+        // Tile Layer Base Map
+        var basemap = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+            attribution:
+                '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        });
+
+        // Menambahkan basemap ke dalam peta
+        basemap.addTo(map);
+
+        // GeoJSON Point Sarana Prasarana
+        var pos = L.geoJSON(null, {
+            // Style
+            pointToLayer: function (feature, latlng) {
+                return L.marker(latlng, {
+                    icon: L.icon({
+                        iconUrl: "icon/icon.png", // icon marker
+                        iconSize: [30, 30], // ukuran icon
+                        iconAnchor: [24, 48], // posisi icon terhadap titik (point)
+                        popupAnchor: [0, -48], // posisi popup terhadap icon
+                        tooltipAnchor: [-16, -30], // posisi tooltip terhadap icon
+                    }),
+                });
+            },
+
+            // onEachFeature
+
+            onEachFeature: function (feature, layer) {
+                // variable popup content
+                var popup_content = "Nama: " + feature.properties.NAMOBJ;
+
+                layer.on({
+                    click: function (e) {
+                        //pos.bindPopup(popup_content);
+
+                        //Menampilkan feature modal
+                        $("#featureModalTitle").html("Pos");
+                        $("#featureModalBody").html(popup_content);
+                        $("#featureModal").modal("show");
+                    },
+                    mouseover: function (e) {
+                        pos.bindTooltip(feature.properties.NAMOBJ, {
+                            direction: "top",
+                            //sticky: true,
+                        });
+                    },
+                });
+            },
+
+        });
+
+        $.getJSON("data/pos.geojson", function (data) {
+            pos.addData(data); // Menambahkan data ke dalam GeoJSON Point Sarana Prasarana
+            map.addLayer(pos); // Menambahkan GeoJSON Point Sarana Prasarana ke dalam peta
+        });
+
+        // GeoJSON Polyline Jalan
+        map.createPane('paneJalan');
+        map.getPane("paneJalan").style.zIndex = 401;
+        var jalan = L.geoJSON(null, {
+            pane: 'paneJalan',
+            // Style
+            style: function (feature) {
+                return {
+                    color: "red",
+                    opacity: 0.5,
+                    weight: 2,
+                };
+            },
+
+            // onEachFeature
+
+            onEachFeature: function (feature, layer) {
+                // variable popup content
+                var popup_content = "Jenis: " + feature.properties.REMARK;
+
+                layer.on({
+                    click: function (e) {
+                        //jalan.bindPopup(popup_content);
+
+                        //Menampilkan feature modal
+                        $("#featureModalTitle").html("Jalan");
+                        $("#featureModalBody").html(popup_content);
+                        $("#featureModal").modal("show");
+                    },
+
+                    mouseover: function (e) {
+                        jalan.bindTooltip(feature.properties.REMARK, {
+                            direction: "auto",
+                            sticky: true,
+                        });
+                    },
+                });
+            },
+
+        });
+
+        $.getJSON("data/jalan.geojson", function (data) {
+            jalan.addData(data); // Menambahkan data ke dalam GeoJSON Polyline Jalan
+            map.addLayer(jalan); // Menambahkan GeoJSON Polyline Jalan ke dalam peta
+        });
+
+        // GeoJSON Polygon Administrasi
+        map.createPane('paneJumlahPenduduk');
+        map.getPane("paneJumlahPenduduk").style.zIndex = 301;
+
+        var symbologyCategorized = {
+            'Sadang': '#fec5bb',  // Red
+            'Ayah': '#fcd5ce',  // Green
+            'Buayan': '#fed766',  // Blue
+            'Puring': '#f686bd',  // Blue
+            'Petanahan': '#e8e8e4',  // Blue
+            'Klirong': '#f4bbd3',  // Blue
+            'Buluspesantren': '#ece4db',  // Blue
+            'Ambal': '#8e6e53',  // Blue
+            'Mirit': '#ffd7ba',  // Blue
+            'Prembun': '#fec89a',  // Blue
+            'Kutowinangun': '#22223b',  // Blue
+            'Alian': '#ebfcfb',  // Blue
+            'Kebumen': '#9a8c98',  // Blue
+            'Pejagoan': '#c9ada7',  // Blue
+            'Sruweng': '#f2e9e4',  // Blue
+            'Adimulyo': '#d6ccc2',  // Blue
+            'Kuwarasan': '#fe5d9f',  // Blue
+            'Rowokele': '#e3d5ca',  // Blue
+            'Sempor': '#d5bdaf',  // Blue
+            'Gombong': '#e0afa0',  // Blue
+            'Sadang': '#ff4d6d',  // Blue
+            'Bonorowo': '#cbc0d3',  // Blue
+            'Padureso': '#e54b4b',  // Blue
+            'Poncowarno': '#ff99ac',  // Blue
+            'Karangsambung': '#8b575c',  // Blue
+            // Tambahkan kecamatan lainnya sesuai kebutuhan
+        };
+
+        var jumlah_penduduk = L.geoJSON(null, {
+            pane: 'paneJumlahPenduduk',
+            style: function (feature) {
+                // Style berdasarkan kategori WADMKC
+                var fillColor = symbologyCategorized[feature.properties.WADMKC] || '#CCCCCC'; // Default warna jika WADMKC tidak ada dalam kategori
+
+                return {
+                    color: "gray",
+                    opacity: 1,
+                    weight: 1,
+                    fillColor: fillColor,
+                    fillOpacity: 0.8,
+                };
+            },
+
+            // onEachFeature
+            onEachFeature: function (feature, layer) {
+                // variable popup content
+                var popup_content = "Kecamatan: " + feature.properties.WADMKC;
+
+                layer.on({
+                    click: function (e) {
+                        // Menampilkan feature modal
+                        $("#featureModalTitle").html("Kecamatan Kebumen");
+                        $("#featureModalBody").html(popup_content);
+                        $("#featureModal").modal("show");
+                    },
+                    mouseover: function (e) {
+                        jumlah_penduduk.bindTooltip(feature.properties.WADMKC, {
+                            direction: "auto",
+                            sticky: true,
+                        });
+                    },
+                });
+            },
+        });
+
+        $.getJSON("data/jumlah_penduduk.geojson", function (data) {
+            jumlah_penduduk.addData(data); // Menambahkan data ke dalam GeoJSON Polygon Jumlah Penduduk
+            map.addLayer(jumlah_penduduk); // Menambahkan GeoJSON Polygon Jumlah Penduduk ke dalam peta
+        });
+
+
+        // Back to Default Extent
+        L.control.defaultExtent()
+            .addTo(map);
+
+        // Control Layer
+        var baseMaps = {
+            "Basemap": basemap,
+        };
+
+        var overlayMaps = {
+            "Kantor Pos": pos,
+            "Jalan": jalan,
+            "Administrasi Kebumen": jumlah_penduduk,
+        };
+
+        var controllayer = L.control.layers(baseMaps, overlayMaps);
+        controllayer.addTo(map);
+
+        // Search Control
+        var searchControl = new L.Control.Search({
+            layer: jumlah_penduduk,
+            propertyName: 'WADMKC',
+            marker: false,
+            moveToLocation: function (latlng, title, map) {
+                //map.fitBounds( latlng.layer.getBounds() );
+                var zoom = map.getBoundsZoom(latlng.layer.getBounds());
+                map.setView(latlng, zoom); // access the zoom
+            }
+        });
+
+        searchControl.on('search:locationfound', function (e) {
+
+            //console.log('search:locationfound', );
+
+            //map.removeLayer(this._markerSearch)
+
+            e.layer.setStyle({ fillColor: '#0ff', color: 'yellow' });
+            if (e.layer._popup)
+                e.layer.openPopup();
+
+        }).on('search:collapsed', function (e) {
+
+            jumlah_penduduk.eachLayer(function (layer) {	//restore feature color
+                jumlah_penduduk.resetStyle(layer);
+            });
+        });
+
+        map.addControl(searchControl);  //inizialize search control
+
+        // Logo watermark
+        L.Control.Watermark = L.Control.extend({
+            onAdd: function (map) {
+                var img = L.DomUtil.create('img');
+
+                img.src = 'icon/logo.png';
+                img.style.width = '100px';
+
+                return img;
+            },
+
+            onRemove: function (map) {
+                // Nothing to do here
+            }
+        });
+
+        L.control.watermark = function (opts) {
+            return new L.Control.Watermark(opts);
+        }
+
+        L.control.watermark({ position: 'bottomleft' }).addTo(map);
+    </script>
+</body>
+
+</html>
